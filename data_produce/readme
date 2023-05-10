@@ -1,0 +1,3 @@
+dataproduce.py会生成对应的训练集，验证集和测试集
+art_fun.py是art算法
+wgn_fun是将数据集添加高斯噪声
