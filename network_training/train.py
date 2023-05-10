@@ -657,7 +657,7 @@ class Unet:
         np.save(path2 + 'result/19999/prediction.npy', x_input[0, ..., 0])
         print("Done predicting")
 
-
+       
 batch_size = 10
 net = Unet()
 net.set_up_unet(batch_size)
