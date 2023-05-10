@@ -144,4 +144,3 @@ np.save(path1 + 'predict_set.npy', predict_set)
 np.save(path1 + 'predict_set_label.npy', predict_label_set)
 
 
-
