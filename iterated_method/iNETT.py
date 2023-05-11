@@ -665,7 +665,7 @@ class Unet:
 
         np.save(path2 + 'result/19999/E2.npy', E2)
         np.save(path2 + 'result/19999/E1.npy', E1)
-        np.save(path2 + 'result/19999/prediction.npy', x_input[0, ..., 0])
+        np.save(path2 + 'result/19999/prediction.npy', x_input[0, ..., 0])#保存结果
         print("Done predicting")
 
 
