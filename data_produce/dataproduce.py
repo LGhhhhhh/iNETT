@@ -20,7 +20,6 @@ def random_ellipse():
             np.random.rand() * 2 * np.pi)
 
 
-
 def random_phantom(spc):
     n = max(1, np.random.poisson(2))
     ellipses = [random_ellipse() for _ in range(n)]
