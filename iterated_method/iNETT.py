@@ -678,7 +678,7 @@ if __name__ == '__main__':
     k = 2000
     size = 256
     s = 0.01
-    alpha = 1.1
+    alpha = 2
     num = 10
     p = predict_set_data[i]
     y = np.dot(w, np.reshape(predict_true_image[i, ..., 0], [256 * 256, 1]))
