@@ -1,4 +1,3 @@
-
 import numpy as np
 import odl
 from art_fun import art_fun
@@ -61,7 +60,7 @@ for i in range(0, 1000):
 
     """1000个无伪影的训练集"""
 for i in range(1000, 2000):
-    train_set[i, ..., 0] = train_true_image[i, ..., 0]
+    phantom = random_phantom(space)
     f = np.reshape(phantom, [size, size])
     f = np.array(f).T
     if np.max(f) > 0:
@@ -105,6 +104,7 @@ for i in range(0, 200):
 
     """200个无伪影的训练集"""
 for i in range(200, 400):
+    phantom = random_phantom(space)
     f = np.reshape(phantom, [size, size])
     f = np.array(f).T
     if np.max(f) > 0:
@@ -163,9 +163,3 @@ np.save(path2 + 'predict_true_image.npy', predict_true_image)
 np.save(path2 + 'predict_set_data.npy', predict_set_data)
 np.save(path2 + 'predict_set.npy', predict_set)
 np.save(path2 + 'predict_set_label.npy', predict_label_set)
-
-
-
-
-
-
