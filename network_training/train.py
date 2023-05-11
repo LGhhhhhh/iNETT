@@ -583,6 +583,14 @@ class Unet:
                     print("train: loss:%.6f,  loss_mean:%.6f ; valid: loss:%.6f, loss_mean:%.6f" % (
                         t_loss_all, t_loss_mean, v_loss_all, v_loss_mean))
                     print("------------------------------------------------------------")
+                if (i + 1) % 5000 == 0:
+                    num = str(i)
+                    np.savetxt(path2 + 'result/' + num + 'train_loss_mean.txt', train_loss_mean)
+                    np.savetxt(path2 + 'result/' + num + 'train_loss_all.txt', train_loss_all)
+                    np.savetxt(path2 + 'result/' + num + 'valid_loss_mean.txt', valid_loss_mean)
+                    np.savetxt(path2 + 'result/' + num + 'valid_loss_all.txt', valid_loss_all)
+                    ckpt_path = path2 + 'result/' + num + 'unet01.ckpt'
+                    saver.save(sess, ckpt_path)
         writer.close()
         print("Done training")
 
@@ -657,7 +665,7 @@ class Unet:
         np.save(path2 + 'result/19999/prediction.npy', x_input[0, ..., 0])
         print("Done predicting")
 
-       
+
 batch_size = 10
 net = Unet()
 net.set_up_unet(batch_size)
